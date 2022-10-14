@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Citikart" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#1F74BA</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#1F74BA</item>
+        <item name="colorSecondaryVariant">#1F74BA</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.Citikart.SharedViewTransition" parent="Theme.Citikart">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
+    </style>
+    <style name="Theme.Citikart.SignIn" parent="Theme.Citikart.SharedViewTransition">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.Citikart.SignUp" parent="Theme.Citikart.SharedViewTransition">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.Citikart.Prime" parent="Theme.Citikart.SharedViewTransition">
+        <item name="android:statusBarColor">@color/primeStatusBarColor</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.Citikart.ProductDetail" parent="Theme.Citikart.SharedViewTransition">
+        <item name="android:statusBarColor">@color/colorPrimeBackgroundMain</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.Citikart.AddProduct" parent="Theme.Citikart.SharedViewTransition">
+        <item name="android:statusBarColor">@color/addProductStatusBarColor</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

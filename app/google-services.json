@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "268778908934",
+    "project_id": "citikart-4e3c9",
+    "storage_bucket": "citikart-4e3c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268778908934:android:ce72727ead44b9ae648287",
+        "android_client_info": {
+          "package_name": "com.example.citikart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268778908934-flq3lcko2e21huk98tpnq3j5c2ue1ilq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.citikart",
+            "certificate_hash": "5ddb524963c30db82fd3b04a8ce023a2f6dba46f"
+          }
+        },
+        {
+          "client_id": "268778908934-thjdgja8um3rnrfjqaftffh2ki9gf969.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnRlTntOihep04PxODeEuZW9NRY3y99x0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268778908934-thjdgja8um3rnrfjqaftffh2ki9gf969.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

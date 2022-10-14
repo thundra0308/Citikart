@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimeBackgroundMain"
+    tools:context=".activities.ui.cart.CartFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_cartfragment"
+        android:layout_width="match_parent"
+        android:background="@drawable/account_fragment_toobar_and_top"
+        android:layout_height="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="2dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:lottie_autoPlay="true"
+                android:layout_gravity="center"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ic_splash2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOUR CART"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="-10dp"
+                android:layout_marginEnd="28dp"
+                android:textStyle="bold|italic"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_cartfragment_backgroundtop"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="25dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_cartfragment"
+        android:background="@drawable/account_fragment_top_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:text="Subtotal"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:layout_gravity="center|top"
+            android:textColor="@color/accountTopTextColor"/>
+
+            <TextView
+                android:id="@+id/tv_cartfragment_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center|top"
+                android:text="Subtotal"
+                android:textColor="@color/accountTopTextColor"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_cartfragment_proceedtobuybtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:cardCornerRadius="7dp"
+        android:layout_marginTop="-220dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_cartfragment_backgroundtop"
+        app:cardBackgroundColor="#F7E200">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Proceed to Buy "
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cartfragment_cartitems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/cv_cartfragment_proceedtobuybtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

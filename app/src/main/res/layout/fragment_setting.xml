@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimeBackgroundMain"
+    tools:context=".activities.ui.setting.SettingFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_settingfragment"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/account_fragment_toobar_and_top"
+        android:layout_height="?attr/actionBarSize"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SETTING"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/account_fragment_top_background"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_settingfragment"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_settingfragment"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_settingfragment_logoutbtn"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_settingfragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            >
+
+        <LinearLayout
+            android:id="@+id/ll_settingfragment_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_settingfragment_addyourproduct"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="15dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="@color/accountcardtopcolor"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_more"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:text="Add Your Products"
+                    android:textSize="12sp"
+                    android:textColor="@color/accountTopTextColor"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_settingfragment_addaddress"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="15dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="@color/accountcardtopcolor"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_address"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:text="Add Address"
+                    android:textSize="12sp"
+                    android:textColor="@color/accountTopTextColor"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_settingfragment_yourorderhistory"
+                android:layout_width="110dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="15dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/accountcardtopcolor"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_order"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:text="Order History"
+                    android:textSize="12sp"
+                    android:textColor="@color/accountTopTextColor"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_settingfragment_logoutbtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/nsv_settingfragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_settingfragment_logout"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
+            app:cardBackgroundColor="@color/accountcardtopcolor"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Log Out"
+                android:textColor="@color/accountTopTextColor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

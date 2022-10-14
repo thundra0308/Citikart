@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Citikart</string>
+    <string name="title_activity_prime">PrimeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string-array name="gender_select">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="state_select">
+        <item>Uttar Pradesh</item>
+        <item>Delhi</item>
+    </string-array>
+
+    <string-array name="address_type_select">
+        <item>Home (7 AM - 9 PM)</item>
+        <item>Office (10 AM - 6 PM)</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+
+    <gradient
+        android:startColor="@color/account_fragment_top_color"
+        android:endColor="@color/account_fragment_toolbar_color_light"
+        android:angle="90"/>
+
+</shape>

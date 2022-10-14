@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#151515</color>
+    <color name="colorOnPrimary">#F7E200</color>
+    <color name="colorPrimaryVariant">#F09120</color>
+    <color name="toolbartitlecolor">#1F74BA</color>
+    <color name="neumorphdarkshadow">#0E0E0E</color>
+    <color name="neumorphlightshadow">#1E1E1E</color>
+    <color name="tvlogdesccolor">#FFFFFF</color>
+    <color name="logbtncolor">#FFFFFF</color>
+    <color name="ethintcolor">#1F74BA</color>
+    <color name="backgroundColor">#000000</color>
+    <color name="snackBarColor">#C8FF87</color>
+    <color name="snackBarColorError">#FF5757</color>
+    
+    <color name="colorStatusBarAndToolbar">#000000</color>
+    <color name="colorPrimeBackgroundMain">#000000</color>
+
+    <color name="account_fragment_toolbar_color_dark">#000000</color>
+    <color name="account_fragment_toolbar_color_light">#000000</color>
+    <color name="account_fragment_top_color">#000000</color>
+    <color name="primeStatusBarColor">#00000000</color>
+    <color name="accountTopTextColor">#FFFFFF</color>
+    <color name="accountcardtopcolor">#454545</color>
+
+    <color name="profileTextBackgroundColor">#151515</color>
+
+    <color name="searchBarBackgroundColor">#FFFFFF</color>
+
+    <color name="productDetailDotStrokeColor">#FFFFFF</color>
+
+    <color name="addProductStatusBarColor">#000000</color>
+
+    <color name="homeCardBackgroundColor">#FFFFFF</color>
+    
+</resources>

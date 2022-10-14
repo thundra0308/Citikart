@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimeBackgroundMain"
+    tools:context=".activities.ui.account.AccountFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_account"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/account_fragment_toobar_and_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|start"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ic_splash2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_account_top"
+            android:layout_width="match_parent"
+            android:layout_below="@id/toolbar_account"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_account_top"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/account_fragment_top_background"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Hello,"
+                    android:textColor="@color/accountTopTextColor"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/tv_accountfragment_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="Suryansh"
+                    android:textColor="@color/accountTopTextColor"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/account_profileimagetop"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/ic_profileplaceholder"
+                    android:layout_gravity="center|top"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_account_card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/ll_account_top"
+                android:layout_marginTop="-40dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="125dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="50dp"
+                        app:cardBackgroundColor="@color/accountcardtopcolor"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_weight="1"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_account_yourorders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Orders"
+                            android:textSize="16sp"
+                            android:textColor="@color/accountTopTextColor"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="125dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="7dp"
+                        app:cardBackgroundColor="@color/accountcardtopcolor"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_account_buyagain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Buy Again"
+                            android:textSize="16sp"
+                            android:textColor="@color/accountTopTextColor"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_accountfragment_youraccount"
+                        android:layout_width="125dp"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="50dp"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="1dp"
+                        app:cardBackgroundColor="@color/accountcardtopcolor"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_weight="1"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_account_youraccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Account"
+                            android:textSize="16sp"
+                            android:textColor="@color/accountTopTextColor"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="125dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="top"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/accountcardtopcolor"
+                        android:layout_marginEnd="5dp"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_account_yourwishlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Wish List"
+                            android:textSize="16sp"
+                            android:textColor="@color/accountTopTextColor"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+</RelativeLayout>
