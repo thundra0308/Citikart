@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.citikart.activities.ProductDetailActivity
@@ -18,6 +19,9 @@ import com.example.citikart.databinding.FragmentHomeBinding
 import com.example.citikart.models.ProductModel
 import com.example.citikart.utils.Constants
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
 
@@ -44,8 +48,10 @@ class HomeFragment : Fragment() {
             val adapter = HomeFragmentAdapter(requireContext(),products!!)
             adapter.setOnClickListener(object : HomeFragmentAdapter.onItemClickListener{
                 override fun onItemClick(position: Int, model: ProductModel) {
+                    Log.e("hf", "${model.sellerId} ${model.documentId}")
                     val intent = Intent(activity,ProductDetailActivity::class.java)
-                    intent.putExtra(Constants.DOCUMENT_ID,model.documentId)
+                    intent.putExtra(Constants.SELLER_ID,model.sellerId)
+                    intent.putExtra(Constants.PRODUCT_ID,model.documentId)
                     startActivity(intent)
                 }
             })
@@ -56,22 +62,30 @@ class HomeFragment : Fragment() {
     }
 
     private fun getProductList() {
-        FirebaseFirestore.getInstance().collection(Constants.PRODUCT).get().addOnSuccessListener {
-                document->
-            Log.i(activity?.javaClass?.simpleName, document.documents.toString())
-            val productList: ArrayList<ProductModel> = ArrayList()
-            for(i in document.documents) {
-                val product = i.toObject(ProductModel::class.java)!!
-                product.documentId = i.id
-                val hashmap = HashMap<String,Any>()
-                hashmap["documentId"] = i.id
-                FirebaseFirestore.getInstance().collection(Constants.PRODUCT).document(i.id).update(hashmap)
-                productList.add(product)
+        val productList: ArrayList<ProductModel> = ArrayList()
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
+                FirebaseFirestore.getInstance().collection(Constants.USERS).get()
+                    .addOnSuccessListener { users ->
+                        Log.i(activity?.javaClass?.simpleName, users.documents.toString())
+                        for (i in users.documents) {
+                            FirebaseFirestore.getInstance().collection(Constants.USERS)
+                                .document(i.id)
+                                .collection(Constants.PRODUCT).get()
+                                .addOnSuccessListener { products ->
+                                    for (j in products.documents) {
+                                        val p = j.toObject(ProductModel::class.java)
+                                        productList.add(p!!)
+                                    }
+                                    setUpRecyclerView(productList)
+                                }
+                        }
+                    }.addOnFailureListener {
+                        Log.e(activity?.javaClass?.simpleName, "Error While Creating a Board", it)
+                    }
             }
-            setUpRecyclerView(productList)
-        }.addOnFailureListener {
-            Log.e(activity?.javaClass?.simpleName,"Error While Creating a Board",it)
         }
+        Log.e("Products", "$productList")
     }
 
     override fun onDestroyView() {

@@ -24,6 +24,7 @@ import com.example.citikart.utils.Constants
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.Dexter
@@ -112,7 +113,7 @@ class AddProductActivity : BaseActivity() {
     }
 
     private fun addProduct(sellerId: String) {
-        var p: String = binding?.etAddproductAddproductprice?.text?.toString()!!
+        val p: String = binding?.etAddproductAddproductprice?.text?.toString()!!
         val product = ProductModel(
             sellerId = sellerId,
             images = mProductImageUrl,
@@ -122,6 +123,18 @@ class AddProductActivity : BaseActivity() {
             details = binding?.etAddproductAddproductdetails?.text?.toString()
         )
         FirestoreClass().addProduct(this,product)
+        updateProductDetail()
+    }
+
+    private fun updateProductDetail() {
+        val userId = FirestoreClass().getCurrentUserId()
+        FirebaseFirestore.getInstance().collection(Constants.USERS).document(userId).collection(Constants.PRODUCT).get().addOnSuccessListener { products ->
+            for(product in products) {
+                val hashMap = HashMap<String,Any>()
+                hashMap["documentId"] = product.id
+                FirebaseFirestore.getInstance().collection(Constants.USERS).document(userId).collection(Constants.PRODUCT).document(product.id).update(hashMap)
+            }
+        }
     }
 
     private fun uploadProductImage(sellerId: String) {

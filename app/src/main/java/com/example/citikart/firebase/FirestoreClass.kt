@@ -88,7 +88,7 @@ class FirestoreClass: BaseActivity() {
     }
 
     fun addProduct(activity: AddProductActivity, product: ProductModel) {
-        mFireStore.collection(Constants.PRODUCT)
+        mFireStore.collection(Constants.USERS).document(getCurrentUserId()).collection(Constants.PRODUCT)
             .document()
             .set(product, SetOptions.merge())
             .addOnSuccessListener {
@@ -100,9 +100,9 @@ class FirestoreClass: BaseActivity() {
             }
     }
 
-    fun getProductDetails(activity: ProductDetailActivity, documentId: String) {
-        Log.e("documentid1", documentId)
-        mFireStore.collection(Constants.PRODUCT).document(documentId).get().addOnSuccessListener {
+    fun getProductDetails(activity: ProductDetailActivity, sellerId: String, productId: String) {
+        Log.e("documentid1", productId+" "+sellerId)
+        mFireStore.collection(Constants.USERS).document(sellerId).collection(Constants.PRODUCT).document(productId).get().addOnSuccessListener {
                 document->
             Log.i(activity.javaClass.simpleName,document.toString())
             val product = document.toObject(ProductModel::class.java)

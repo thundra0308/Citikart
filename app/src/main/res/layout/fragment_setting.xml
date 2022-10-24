@@ -57,7 +57,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_settingfragment_addyourproduct"
                 android:layout_width="110dp"
-                android:layout_height="150dp"
+                android:layout_height="130dp"
                 app:cardCornerRadius="15dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
@@ -75,7 +75,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:layout_marginStart="5dp"
                     android:layout_gravity="bottom"
+                    android:layout_marginEnd="5dp"
                     android:gravity="center"
                     android:text="Add Your Products"
                     android:textSize="12sp"
@@ -86,7 +88,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_settingfragment_addaddress"
                 android:layout_width="110dp"
-                android:layout_height="150dp"
+                android:layout_height="130dp"
                 app:cardCornerRadius="15dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
@@ -115,7 +117,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_settingfragment_yourorderhistory"
                 android:layout_width="110dp"
-                android:layout_height="150dp"
+                android:layout_height="130dp"
                 app:cardCornerRadius="15dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/accountcardtopcolor"
